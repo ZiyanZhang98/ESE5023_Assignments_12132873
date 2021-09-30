@@ -14,7 +14,7 @@ class Solution:
             self.Find_expression(s[i + 1:], pointer + int(s[:i + 1]), path + '+' + s[:i + 1])
             self.Find_expression(s[i + 1:], pointer - int(s[:i + 1]), path + '-' + s[:i + 1])
 
-    def __len__(self):
+    def __len__(self) -> int:
         count = 0
         for string in self.answer:
             if string[0] == '+':
@@ -30,10 +30,12 @@ class Solution:
         return ''
 
 
-def get_key(dict, target):
-    for item in dict.items():
-        if item[1] == target:
-            return item[0]
+def get_key(my_dict, n):
+    result = []
+    for item in my_dict.items():
+        if item[1] == n:
+            result.append(item[0])
+    return result
 
 
 if __name__ == '__main__':
@@ -62,6 +64,7 @@ if __name__ == '__main__':
         y.append(value)
     plt.plot(x, y)
     plt.text(1, 26, 'Max(1,26)', color='r')
+    plt.text(45, 26, 'Max(45,26)', color='r')
     plt.text(88, 6, 'Min(88,6)', color='r')
     plt.title('Distribution')
     plt.show()
